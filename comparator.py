@@ -4,14 +4,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-from dataclasses import dataclass, asdict
-
-@dataclass
-class Comparison:
-    ratio: float
-    netapp: int
-    filestore: int
-
 class Comparator:
 
     def __init__(self) -> None:
@@ -114,12 +106,12 @@ class Comparator:
                     ratio: float = 0.0
                     if fs_val != 0:
                         ratio = na_val / fs_val
-                    cpsn = Comparison(
-                        ratio = ratio,
-                        netapp = na_val,
-                        filestore = fs_val
-                    )
-                    comparison[action][filesize][bksz] = asdict(cpsn)
+                    cpsn = {
+                        "ratio": ratio,
+                        "netapp": na_val,
+                        "filestore": fs_val
+                    }
+                    comparison[action][filesize][bksz] = cpsn
 
         output=json.dumps(comparison, sort_keys=True, indent=2)
         outfile = Path("comparison") / "netapp-to-filestore-ratio.json"
