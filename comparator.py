@@ -37,7 +37,7 @@ class Comparator:
 
 
     def load_data(self) -> None:
-        for category in ("filestore", "netapp"):
+        for category in ("filestore", "netapp", "nfsv4"):
             self._cache[category] = {}
             self.load_category(category)
 
@@ -49,7 +49,8 @@ class Comparator:
     def load_report(self, category:str, action:str) -> None:
         cat_pref = {
             "filestore": "fs1",
-            "netapp": "na1"
+            "netapp": "na1",
+            "nfsv4": "nfsv4"
         }
         filename = Path(category) / f"{cat_pref[category]}-{action}.tsv"
         inp_lines = filename.read_text().split("\n")
@@ -98,23 +99,34 @@ class Comparator:
             
             na = self._cache["netapp"][action]
             fs = self._cache["filestore"][action]
+            n4 = self._cache["nfsv4"][action]
             for filesize in na:
                 comparison[action][filesize] = {}
                 for bksz in na[filesize]:
                     na_val = na[filesize][bksz]
                     fs_val = fs[filesize][bksz]
-                    ratio: float = 0.0
+                    n4_val = n4[filesize][bksz]
+                    ratio_3: float = 0.0
                     if fs_val != 0:
-                        ratio = na_val / fs_val
+                        ratio_3 = na_val / fs_val
+                    ratio_4: float = 0.0
+                    if fs_val != 0:
+                        ratio_4 = n4_val / fs_val
+                    ratio_34: float = 0.0
+                    if n4_val != 0:
+                        ratio_34 = na_val / n4_val
                     cpsn = {
-                        "ratio": ratio,
+                        "ratio_3": ratio_3,
+                        "ratio_4": ratio_4,
+                        "ratio_34": ratio_34,
                         "netapp": na_val,
-                        "filestore": fs_val
+                        "filestore": fs_val,
+                        "nfsv4": n4_val
                     }
                     comparison[action][filesize][bksz] = cpsn
 
         output=json.dumps(comparison, sort_keys=True, indent=2)
-        outfile = Path("comparison") / "netapp-to-filestore-ratio.json"
+        outfile = Path("comparison") / "netapp-3-and-4-to-filestore-ratio.json"
         outfile.write_text(output)
 
 def main() -> None:
