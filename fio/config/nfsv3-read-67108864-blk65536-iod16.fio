@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv3-read-67108864-blk65536-iod16]
+stonewall
+filename=/nfsv3/scratch/adam/fsbench/nfsv3/nfsv3-read-67108864-blk65536-iod16.bin
+rw=read
+size=67108864
+blocksize=65536
+iodepth=16

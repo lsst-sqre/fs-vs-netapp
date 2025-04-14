@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv3-randwrite-16384-blk4096-iod4]
+stonewall
+filename=/nfsv3/scratch/adam/fsbench/nfsv3/nfsv3-randwrite-16384-blk4096-iod4.bin
+rw=randwrite
+size=16384
+blocksize=4096
+iodepth=4

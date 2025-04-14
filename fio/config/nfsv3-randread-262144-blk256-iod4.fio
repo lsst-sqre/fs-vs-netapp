@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv3-randread-262144-blk256-iod4]
+stonewall
+filename=/nfsv3/scratch/adam/fsbench/nfsv3/nfsv3-randread-262144-blk256-iod4.bin
+rw=randread
+size=262144
+blocksize=256
+iodepth=4

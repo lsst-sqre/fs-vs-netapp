@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv4-rw-4194304-blk1048576-iod1]
+stonewall
+filename=/scratch/adam/fsbench/nfsv4/nfsv4-rw-4194304-blk1048576-iod1.bin
+rw=rw
+size=4194304
+blocksize=1048576
+iodepth=1

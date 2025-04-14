@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-read-262144-blk65536-iod4]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-read-262144-blk65536-iod4.bin
+rw=read
+size=262144
+blocksize=65536
+iodepth=4

@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-rw-16384-blk4096-iod1]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-rw-16384-blk4096-iod1.bin
+rw=rw
+size=16384
+blocksize=4096
+iodepth=1

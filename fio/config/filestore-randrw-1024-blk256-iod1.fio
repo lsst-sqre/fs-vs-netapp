@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-randrw-1024-blk256-iod1]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-randrw-1024-blk256-iod1.bin
+rw=randrw
+size=1024
+blocksize=256
+iodepth=1

@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv3-write-17179869184-blk1048576-iod4]
+stonewall
+filename=/nfsv3/scratch/adam/fsbench/nfsv3/nfsv3-write-17179869184-blk1048576-iod4.bin
+rw=write
+size=17179869184
+blocksize=1048576
+iodepth=4

@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv4-randrw-16384-blk256-iod16]
+stonewall
+filename=/scratch/adam/fsbench/nfsv4/nfsv4-randrw-16384-blk256-iod16.bin
+rw=randrw
+size=16384
+blocksize=256
+iodepth=16

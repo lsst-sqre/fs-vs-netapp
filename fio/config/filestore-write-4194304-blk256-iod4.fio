@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-write-4194304-blk256-iod4]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-write-4194304-blk256-iod4.bin
+rw=write
+size=4194304
+blocksize=256
+iodepth=4

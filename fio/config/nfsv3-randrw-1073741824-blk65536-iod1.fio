@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv3-randrw-1073741824-blk65536-iod1]
+stonewall
+filename=/nfsv3/scratch/adam/fsbench/nfsv3/nfsv3-randrw-1073741824-blk65536-iod1.bin
+rw=randrw
+size=1073741824
+blocksize=65536
+iodepth=1

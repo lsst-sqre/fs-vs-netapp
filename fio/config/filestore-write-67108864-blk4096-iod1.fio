@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-write-67108864-blk4096-iod1]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-write-67108864-blk4096-iod1.bin
+rw=write
+size=67108864
+blocksize=4096
+iodepth=1

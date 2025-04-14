@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[nfsv4-read-1024-blk256-iod4]
+stonewall
+filename=/scratch/adam/fsbench/nfsv4/nfsv4-read-1024-blk256-iod4.bin
+rw=read
+size=1024
+blocksize=256
+iodepth=4

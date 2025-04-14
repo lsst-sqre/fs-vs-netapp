@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-randread-4194304-blk256-iod16]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-randread-4194304-blk256-iod16.bin
+rw=randread
+size=4194304
+blocksize=256
+iodepth=16

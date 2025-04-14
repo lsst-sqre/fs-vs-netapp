@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-randwrite-262144-blk65536-iod1]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-randwrite-262144-blk65536-iod1.bin
+rw=randwrite
+size=262144
+blocksize=65536
+iodepth=1

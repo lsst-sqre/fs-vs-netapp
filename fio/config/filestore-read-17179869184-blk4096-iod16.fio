@@ -1,0 +1,11 @@
+[global]
+kb_base=1024
+runtime=600s
+
+[filestore-read-17179869184-blk4096-iod16]
+stonewall
+filename=/filestore/scratch/adam/fsbench/filestore/filestore-read-17179869184-blk4096-iod16.bin
+rw=read
+size=17179869184
+blocksize=4096
+iodepth=16
